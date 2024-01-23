@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-color: #1C2C44;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(#2DD4CD, #1C4E5A);
+    border-radius: 0px 0px 20px 20px;
+    padding-left: 50px;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    word-spacing: 7px;
+    color: white;
+}
+
+
+.nav--img {
+    width: 100px;
+}
+
+.title {
+    color: white;
+}
+
+.text-title {
+    display: flex;
+    justify-content: center;
+    font-family:'Black Ops One', system-ui;
+
+}
+
+
+.hero {
+    display: flex;
+
+    justify-content: center;
+}
+
+.cartaa {
+    display: flex;
+    justify-content: center;
+    background-color: #12396fca;
+    border-radius: 2rem;
+    margin-top: 7rem;
+    width: 500px;
+    padding: 2rem;
+}
+
+.formulario {
+    margin: auto;
+    width: 80%;
+}
+
+.login {
+    width: 100%;
+    height: 40px;
+    margin: 30px 0px;
+}
+
+.input--form {
+    background: transparent;
+    border: #2DD4CD 1px solid;
+    color: white;
+    border-radius: 5rem;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0px 20px  20px;
+}
+
+.letter-register {
+    color: white;
+}
+
+.conten--boton {
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    background: linear-gradient(#2FEEC0, #16AA86);
+    border-radius: 10px;
+    height: 45px;
+    width: 80%;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 15px rgb(34, 119, 138);
+
+
+}
+
+.ancor {
+    text-decoration: none;
+    color: #1C2C44;
+    font-weight: 600;
+}
+
+.item-register {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+
+
+
+
+
