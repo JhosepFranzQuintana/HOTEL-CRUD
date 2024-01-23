@@ -14,6 +14,16 @@ if( $validar == null || $validar = ''){
 
 
 ?>
+
+<?php
+require '../config/database.php';
+
+$sqlusuarios = "SELECT cliente.nombre, cliente.id_departamento, cliente.id_ciudad, cliente.id_hotel, cliente.id_cuarto, cliente.id_tiempo FROM cliente";
+
+$usuarios = $conn->query($sqlusuarios)
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     
@@ -63,53 +73,28 @@ if( $validar == null || $validar = ''){
             <thead>    
               <tr>
                 <th>Nombre</th>
-                <th>Correo</th>
-                <th>Telefono</th>
-                <th>Fecha</th>
-                <th>Rol</th>
+                <th>Departamento</th>
+                <th>Ciudad</th>
+                <th>Hotel</th>
+                <th>Cuarto</th>
+                <th>Tiempo</th>
                      
               </tr>
             </thead>
             <tbody>
+                <?php while ($row = $usuarios->fetch_assoc()) {  ?>
+                    <tr>
+                        <td><?= $row['nombre']; ?></td>
+                        <td><?= $row['id_departamento']; ?></td>
+                        <td><?= $row['id_ciudad']; ?></td>
+                        <td><?= $row['id_hotel']; ?></td>
+                        <td><?= $row['id_cuarto']; ?></td>
+                        <td><?= $dir . $row['id_tiempo']; ?></td>
+                   
+                    </tr>
+                <?php } ?>
+            </tbody>
 
-				<?php
-
-$conexion=mysqli_connect("localhost","root","","login");               
-$SQL="SELECT user.id, user.nombre, user.correo, user.password, user.telefono,
-user.fecha, permisos.rol FROM user
-LEFT JOIN permisos ON user.rol = permisos.id";
-$dato = mysqli_query($conexion, $SQL);
-
-if($dato -> num_rows >0){
-    while($fila=mysqli_fetch_array($dato)){
-    
-?>
-<tr>
-<td><?php echo $fila['nombre']; ?></td>
-<td><?php echo $fila['correo']; ?></td>
-<td><?php echo $fila['telefono']; ?></td>
-<td><?php echo $fila['fecha']; ?></td>
-<td><?php echo $fila['rol']; ?></td>
-
-
-
-
-
-<?php
-}
-}else{
-
-    ?>
-    <tr class="text-center">
-    <td colspan="16">No existen registros</td>
-    </tr>
-
-    
-    <?php
-    
-}
-
-?>
 
 
 	</body>
