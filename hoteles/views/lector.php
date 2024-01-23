@@ -40,7 +40,7 @@ if( $validar == null || $validar = ''){
     <br>
 		<div>
 
-      <a class="btn btn-warning" href="../includes/_sesion/cerrarSesion.php">Log Out
+      <a class="btn btn-warning" href="../includes/_sesion/cerrarSesion.php">Cerrar sesión
       <i class="fa fa-power-off" aria-hidden="true"></i>
        </a>
 
@@ -60,21 +60,21 @@ if( $validar == null || $validar = ''){
       <table class="table table-striped table-dark " id= "table_id">
 
                    
-                         <thead>    
-                         <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Telefono</th>
-                        <th>Fecha</th>
-                        <th>Rol</th>
+            <thead>    
+              <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Fecha</th>
+                <th>Rol</th>
                      
-                        </tr>
-                        </thead>
-                        <tbody>
+              </tr>
+            </thead>
+            <tbody>
 
 				<?php
 
-$conexion=mysqli_connect("localhost","root","","r_user");               
+$conexion=mysqli_connect("localhost","root","","login");               
 $SQL="SELECT user.id, user.nombre, user.correo, user.password, user.telefono,
 user.fecha, permisos.rol FROM user
 LEFT JOIN permisos ON user.rol = permisos.id";

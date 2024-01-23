@@ -41,7 +41,7 @@ if( $validar == null || $validar = ''){
 		<div>
 			<a class="btn btn-success" href="../index.php">Nuevo usuario 
       <i class="fa fa-plus"></i> </a>
-      <a class="btn btn-warning" href="../includes/_sesion/cerrarSesion.php">Log Out
+      <a class="btn btn-warning" href="../includes/_sesion/cerrarSesion.php">Cerrar sesión
       <i class="fa fa-power-off" aria-hidden="true"></i>
        </a>
 
@@ -61,23 +61,23 @@ if( $validar == null || $validar = ''){
       <table class="table table-striped table-dark " id= "table_id">
 
                    
-                         <thead>    
-                         <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Password</th>
-                        <th>Telefono</th>
-                        <th>Fecha</th>
-                        <th>Rol</th>
-                        <th>Acciones</th>
+          <thead>    
+            <tr>
+              <th>Nombre</th>
+              <th>Departamento</th>
+              <th>Ciudad</th>
+              <th>Hotel</th>
+              <th>Cuarto</th>
+              <th>Tiempo</th>
+              <th>Acciones</th>
          
-                        </tr>
-                        </thead>
-                        <tbody>
+            </tr>
+          </thead>
+          <tbody>
 
-				<?php
+<?php
 
-$conexion=mysqli_connect("localhost","root","","r_user");               
+$conexion=mysqli_connect("localhost","root","","login");
 $SQL="SELECT user.id, user.nombre, user.correo, user.password, user.telefono,
 user.fecha, permisos.rol FROM user
 LEFT JOIN permisos ON user.rol = permisos.id";
@@ -88,12 +88,12 @@ if($dato -> num_rows >0){
     
 ?>
 <tr>
-<td><?php echo $fila['nombre']; ?></td>
-<td><?php echo $fila['correo']; ?></td>
-<td><?php echo $fila['password']; ?></td>
-<td><?php echo $fila['telefono']; ?></td>
-<td><?php echo $fila['fecha']; ?></td>
-<td><?php echo $fila['rol']; ?></td>
+  <td><?php echo $fila['nombre']; ?></td>
+  <td><?php echo $fila['correo']; ?></td>
+  <td><?php echo $fila['password']; ?></td>
+  <td><?php echo $fila['telefono']; ?></td>
+  <td><?php echo $fila['fecha']; ?></td>
+  <td><?php echo $fila['rol']; ?></td>
 
 
 
