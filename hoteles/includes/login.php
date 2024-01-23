@@ -17,6 +17,13 @@
 </head>
 
 <body class= body>
+    <nav class="nav">
+        <header>
+            <h2>Express reserves</h2>
+        </header>
+        <img class="nav--img" src="../img/logo-hotel.png" alt="">
+    </nav>
+
     <form  action="_functions.php" method="POST">
         <div id="login" >
             <div class="container">
