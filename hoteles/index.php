@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -10,20 +11,16 @@ if( $validar == null || $validar = ''){
     header("Location: ./includes/login.php");
     die();
     
-    
-
 }
-
-
 
 ?>
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registros</title>
+    <title>Hotel</title>
 
 	<link rel="stylesheet" href="./css/es.css">
     <link rel="stylesheet" href="./css/styles.css">
@@ -33,6 +30,7 @@ if( $validar == null || $validar = ''){
 
 
 <form  action="./includes/validar.php" method="POST">
+
 <div id="login" >
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">

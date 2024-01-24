@@ -12,6 +12,14 @@ if( $validar == null || $validar = ''){
   
 }
 
+?>
+
+<?php
+require '../config/database.php';
+
+$sqlusuarios = "SELECT cliente.nombre, cliente.id_departamento, cliente.id_ciudad, cliente.id_hotel, cliente.id_cuarto, cliente.id_tiempo FROM cliente";
+
+$usuarios = $conn->query($sqlusuarios)
 
 ?>
 <!DOCTYPE html>
@@ -30,9 +38,6 @@ if( $validar == null || $validar = ''){
 
 <div class="container is-fluid">
 
-
-
-
 <div class="col-xs-12">
   		<h1>Bienvenido Administrador <?php echo $_SESSION['nombre']; ?></h1>
       <br>
@@ -41,90 +46,47 @@ if( $validar == null || $validar = ''){
 		<div>
 			<a class="btn btn-success" href="../index.php">Nuevo usuario 
       <i class="fa fa-plus"></i> </a>
-      <a class="btn btn-warning" href="../includes/_sesion/cerrarSesion.php">Log Out
+      <a class="btn btn-warning" href="../includes/_sesion/cerrarSesion.php">Cerrar sesión
       <i class="fa fa-power-off" aria-hidden="true"></i>
        </a>
 
 		</div>
 		<br>
+    <br>
 
-
-
-
-           <br>
-
-
-			</form>
-        
-        
+			</form>     
  
       <table class="table table-striped table-dark " id= "table_id">
 
                    
-                         <thead>    
-                         <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Password</th>
-                        <th>Telefono</th>
-                        <th>Fecha</th>
-                        <th>Rol</th>
-                        <th>Acciones</th>
+          <thead>    
+            <tr>
+              <th>Nombre</th>
+              <th>Departamento</th>
+              <th>Ciudad</th>
+              <th>Hotel</th>
+              <th>Cuarto</th>
+              <th>Tiempo</th>
+              <th>Acciones</th>
          
-                        </tr>
-                        </thead>
-                        <tbody>
-
-				<?php
-
-$conexion=mysqli_connect("localhost","root","","r_user");               
-$SQL="SELECT user.id, user.nombre, user.correo, user.password, user.telefono,
-user.fecha, permisos.rol FROM user
-LEFT JOIN permisos ON user.rol = permisos.id";
-$dato = mysqli_query($conexion, $SQL);
-
-if($dato -> num_rows >0){
-    while($fila=mysqli_fetch_array($dato)){
-    
-?>
-<tr>
-<td><?php echo $fila['nombre']; ?></td>
-<td><?php echo $fila['correo']; ?></td>
-<td><?php echo $fila['password']; ?></td>
-<td><?php echo $fila['telefono']; ?></td>
-<td><?php echo $fila['fecha']; ?></td>
-<td><?php echo $fila['rol']; ?></td>
-
-
-
-<td>
-
-
-<a class="btn btn-warning" href="editar_user.php?id=<?php echo $fila['id']?> ">
-<i class="fa fa-edit"></i> </a>
-
-  <a class="btn btn-danger" href="eliminar_user.php?id=<?php echo $fila['id']?>">
-<i class="fa fa-trash"></i></a>
-
-</td>
-</tr>
-
-
-<?php
-}
-}else{
-
-    ?>
-    <tr class="text-center">
-    <td colspan="16">No existen registros</td>
-    </tr>
-
-    
-    <?php
-    
-}
-
-?>
+            </tr>
+          </thead>
+          <tbody>
+                <?php while ($row = $usuarios->fetch_assoc()) {  ?>
+                    <tr>
+                        <td><?= $row['nombre']; ?></td>
+                        <td><?= $row['id_departamento']; ?></td>
+                        <td><?= $row['id_ciudad']; ?></td>
+                        <td><?= $row['id_hotel']; ?></td>
+                        <td><?= $row['id_cuarto']; ?></td>
+                        <td><?= $dir . $row['id_tiempo']; ?></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editaModal" data-bs-id="<?= $row['id']; ?>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                            <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaModal" data-bs-id="<?= $row['id']; ?>"><i class="fa-solid fa-trash"></i></i> Eliminar</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
 
 
 	</body>
