@@ -24,10 +24,10 @@
         <img class="nav--img" src="../img/logo-hotel.png" alt="">
     </nav>
 
-    <form  action="_functions.php" method="POST">
+    <form class="formulario-main" action="_functions.php" method="POST">
         <div id="login" >
             <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-row" class="contenedor-grande">
                     <div id="login-column" class="col-md-6">
                         <div id="login-box" class="conten-carta">
                             <div class="cabecera-form">
