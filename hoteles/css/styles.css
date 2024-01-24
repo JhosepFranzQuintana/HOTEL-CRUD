@@ -44,15 +44,6 @@
     justify-content: center;
 }
 
-.cartaa {
-    display: flex;
-    justify-content: center;
-    background-color: #12396fca;
-    border-radius: 2rem;
-    margin-top: 7rem;
-    width: 500px;
-    padding: 2rem;
-}
 
 .formulario {
     margin: auto;
@@ -65,14 +56,23 @@
     margin: 30px 0px;
 }
 
+.conten-input {
+    margin-bottom: 1rem;
+    width: 60%;
+    
+}
+
 .input--form {
-    background: transparent;
-    border: #2DD4CD 1px solid;
+    border-radius: 44px;
+    border: none;
+    background: #1C2C44;
     color: white;
     border-radius: 5rem;
-    height: 100%;
+    padding: 0.5rem;
     width: 100%;
-    padding: 20px 0px 20px  20px;
+
+
+
 }
 
 .letter-register {
@@ -84,7 +84,7 @@
     justify-content: center;
 }
 
-.boton {
+/* .boton {
     background: linear-gradient(#2FEEC0, #16AA86);
     border-radius: 10px;
     height: 45px;
@@ -92,6 +92,21 @@
     border: none;
     outline: none;
     box-shadow: 0 0 15px rgb(34, 119, 138);
+    
+    
+} */
+
+.boton {
+    background-color: rgba(24, 243, 230, 0.24);
+    border-radius: 5rem;
+    border: none;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5rem;
+    box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    
 
 
 }
@@ -108,9 +123,37 @@
     margin-top: 2rem;
 }
 
+.conten-carta {
+    display: flex;
+    flex-direction: column;
 
+}
 
+.cartaa {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #233A5D;
+    border-radius: 2rem;
+    margin-top: 5rem;
+    box-shadow: 11px 12px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+}
 
+.texto-t {
+    color: #FFF;
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
+
+}
+
+.cabecera-form {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
 
 
 
