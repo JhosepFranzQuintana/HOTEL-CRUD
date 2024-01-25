@@ -1,0 +1,89 @@
+.mainn {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100vh;
+}
+
+
+.cabecera {
+    margin-top: 4rem;
+}
+
+
+.cabecera-titulo {
+    display: flex;
+    justify-content: center;
+}
+
+
+.texto-t2 {
+    color: #FFF;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: normal;
+    font-family: 'Anton', sans-serif;
+}
+
+
+
+.subtitulo {
+    display: flex;
+    justify-content: flex-start;
+    margin: 3rem 0 1rem 1rem;
+    color: white;
+}
+
+.caja-boton {
+    margin: 2rem 0 5rem 1rem;
+}
+
+.tabla-main {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    
+}
+
+.tabla-lector {
+    background: linear-gradient(#1B7C6B, #1C2C44);
+    border-spacing: 0px;
+    border-radius: 20px 20px 0 0;
+    
+}
+
+
+.cabecera-tabla {
+
+    background: linear-gradient(#2feec1c4,#2feec187 , #16aa85ca);
+    background-color: rgba(255, 255, 255, 0.686);
+
+}
+
+.cabecera-item-tabla{
+    padding: 0.5rem 4rem;
+    color: white;
+
+}
+
+.cabecera-item-tabla:nth-child(1) {
+    padding: 0.5rem 4rem;
+    border-radius: 20px 0 0 20px;
+}
+
+.cabecera-item-tabla:nth-child(6) {
+    padding: 0.5rem 4rem;
+    border-radius: 0 20px 20px 0;
+}
+
+/* .cuerpo-tabla {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+} */
+
+.cuerpo-item-tabla {
+    padding: 1rem 0;
+    color: white;
+}

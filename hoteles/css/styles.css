@@ -39,13 +39,6 @@
 }
 
 
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
 .formulario {
     margin: auto;
     width: 80%;
@@ -107,9 +100,7 @@
     padding: 0.5rem;
     box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    
-
-
+    text-decoration: none;
 }
 
 .ancor {

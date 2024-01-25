@@ -33,60 +33,68 @@ $usuarios = $conn->query($sqlusuarios)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/fontawesome-all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/stylesLector.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../css/estilo.css">
-<link rel="stylesheet" href="../css/es.css">
+
     <title>Usuarios</title>
 </head>
 
 
 <body class="body">
 
-  	<section class="hero">
-        <div>
-            <div>
-                <h1>Bienvenido Lector <?php echo $_SESSION['nombre']; ?></h1>
+    <nav class="nav">
+        <header>
+            <h2>Express reserves</h2>
+        </header>
+        <img class="nav--img" src="../img/logo-hotel.png" alt="">
+    </nav>
+
+  	<div class="mainn">
+
+        <div class="cabecera">
+            <div class="cabecera-titulo">
+                <h1 class="texto-t2">BIENVENIDO <?php echo $_SESSION['nombre']; ?></h1>
             </div>
-            <div>
+            <div class="subtitulo">
                 <h1>Lista de usuarios</h1>
             </div>
-        </div>
-      
-        <div>
-            <a class="btn btn-warning" href="../includes/_sesion/cerrarSesion.php">Cerrar sesión
+        <div class="caja-boton">
+            <a class="boton" href="../includes/_sesion/cerrarSesion.php">Cerrar sesión
               <i class="fa fa-power-off" aria-hidden="true"></i>
             </a>
         </div>
-      
-      
               
-        <section>
-              <table class="table table-striped table-dark " id= "table_id">
-                    <thead>
+        <section class="tabla-main">
+              <table class="tabla-lector" id= "table_id">
+                    <thead class="cabecera-tabla">
                       <tr>
-                        <th>Nombre</th>
-                        <th>Departamento</th>
-                        <th>Ciudad</th>
-                        <th>Hotel</th>
-                        <th>Cuarto</th>
-                        <th>Tiempo</th>
+                        <th class="cabecera-item-tabla">Nombre</th>
+                        <th class="cabecera-item-tabla">Departamento</th>
+                        <th class="cabecera-item-tabla">Ciudad</th>
+                        <th class="cabecera-item-tabla">Hotel</th>
+                        <th class="cabecera-item-tabla">Cuarto</th>
+                        <th class="cabecera-item-tabla">Tiempo</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="cuerpo-tabla">
                         <?php while ($row = $usuarios->fetch_assoc()) {  ?>
                             <tr>
-                                <td><?= $row['nombre']; ?></td>
-                                <td><?= $row['id_departamento']; ?></td>
-                                <td><?= $row['id_ciudad']; ?></td>
-                                <td><?= $row['id_hotel']; ?></td>
-                                <td><?= $row['id_cuarto']; ?></td>
-                                <td><?= $dir . $row['id_tiempo']; ?></td>
+                                <td class="cuerpo-item-tabla"><?= $row['nombre']; ?></td>
+                                <td class="cuerpo-item-tabla"><?= $row['id_departamento']; ?></td>
+                                <td class="cuerpo-item-tabla"><?= $row['id_ciudad']; ?></td>
+                                <td class="cuerpo-item-tabla"><?= $row['id_hotel']; ?></td>
+                                <td class="cuerpo-item-tabla"><?= $row['id_cuarto']; ?></td>
+                                <td class="cuerpo-item-tabla"><?= $dir . $row['id_tiempo']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
               </table>
-          </section>
-    </section>
+        </section>
+
+      </div>
 
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
