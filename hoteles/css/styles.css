@@ -5,6 +5,7 @@
 
 .body {
     background-color: #1C2C44;
+    
 }
 
 
@@ -40,7 +41,7 @@
 
 .hero {
     display: flex;
-
+    flex-direction: column;
     justify-content: center;
 }
 
