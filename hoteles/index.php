@@ -24,15 +24,16 @@ if( $validar == null || $validar = ''){
 
 	<link rel="stylesheet" href="./css/es.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styleRegistro.css">
 </head>
 
 <body id="page-top">
 
 
+    
 <form  action="./includes/validar.php" method="POST">
-
-<div id="login" >
-        <div class="container">
+    <div id="login" >
+        <div class="card-registro">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">

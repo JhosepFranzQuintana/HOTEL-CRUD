@@ -1,0 +1,6 @@
+.card-registro {
+    display: flex;
+    width: auto;
+    background-color: rgb(34, 100, 144);
+    justify-content: center;
+}
