@@ -23,7 +23,7 @@ $usuarios = $conn->query($sqlusuarios)
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     
 <head>
     <meta charset="UTF-8">
@@ -81,8 +81,14 @@ $usuarios = $conn->query($sqlusuarios)
                         <td><?= $row['id_cuarto']; ?></td>
                         <td><?= $dir . $row['id_tiempo']; ?></td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editaModal" data-bs-id="<?= $row['id']; ?>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                            <a href="#" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaModal" data-bs-id="<?= $row['id']; ?>"><i class="fa-solid fa-trash"></i></i> Eliminar</a>
+
+
+                          <a class="btn btn-warning" href="editar_user.php?id=<?php echo $fila['id']?> ">
+                          <i class="fa fa-edit"></i> </a>
+
+                          <a class="btn btn-danger" href="eliminar_user.php?id=<?php echo $fila['id']?>">
+                          <i class="fa fa-trash"></i></a>
+
                         </td>
                     </tr>
                 <?php } ?>

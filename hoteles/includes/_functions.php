@@ -27,7 +27,7 @@ if (isset($_POST['accion'])){
 	}
 
     function editar_registro() {
-		$conexion=mysqli_connect("localhost","root","","r_user");
+		$conexion=mysqli_connect("localhost","root","","login");
 		extract($_POST);
 		$consulta="UPDATE user SET nombre = '$nombre', correo = '$correo', telefono = '$telefono',
 		password ='$password', rol = '$rol' WHERE id = '$id' ";
@@ -40,7 +40,7 @@ if (isset($_POST['accion'])){
 }
 
 function eliminar_registro() {
-    $conexion=mysqli_connect("localhost","root","","r_user");
+    $conexion=mysqli_connect("localhost","root","","login");
     extract($_POST);
     $id= $_POST['id'];
     $consulta= "DELETE FROM user WHERE id= $id";
@@ -68,7 +68,7 @@ function acceso_user() {
 
         header('Location: ../views/user.php');
 
-    }else if($filas['rol'] == 2){//lector
+    }else if($filas['rol'] == 2){//Cliente
         header('Location: ../views/lector.php');
     }
     
